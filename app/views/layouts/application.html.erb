@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vet</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  
+  
+  </head>
+
+  <body>
+  <div id="calendar"> 
+<script>
+    $('#calendar').fullCalendar({
+      events: <%= @events.to_json.html_safe %>
+    })
+</script>
+</div>
+  
+
+    <%= yield %>
+    
+  </body>
+</html>
+
+
+

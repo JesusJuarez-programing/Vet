@@ -1,0 +1,65 @@
+<center>
+<%= form_for(companero) do |f| %>
+  <% if companero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(companero.errors.count, "error") %> prohibited this companero from being saved:</h2>
+
+      <ul>
+      <% companero.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Edad %>
+    <%= f.number_field :edad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Raza %>
+    <%= f.select :raza, ['Husky','Labrador','Pug','Beagle','Pastor aleman','Rottweiler','Caniche','Shih Tzu','Bulldog']  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Dueño %>
+    <%= f.text_field :dueno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Descripción %>
+    <%= f.text_field :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Color %>
+    <%= f.select :color, ['Pimienta','Gris','Negro','Blanco','Sesamo','Fuego']%>
+  </div>
+
+  <div class="field">
+    <%= f.label :Peso %>
+    <%= f.text_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Tamaño %>
+    <%= f.text_field :tamano %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Foto %>
+    <%= f.file_field :foto %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+</center>

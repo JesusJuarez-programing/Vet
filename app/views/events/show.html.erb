@@ -1,0 +1,26 @@
+<center>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dueño:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Nombre de la mascota:</strong>
+  <%= @event.nombre %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @event.start %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @event.hora %>
+</p>
+
+<%= link_to '<button type="button" class="button success basic">Editar</button>'.html_safe, edit_event_path(@event) %> |
+<%= link_to '<button type="button" class="button secondary basic">Regresar</button>'.html_safe, events_path %>
+</center>

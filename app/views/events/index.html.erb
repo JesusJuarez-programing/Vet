@@ -1,0 +1,60 @@
+<style>
+        #calendar {
+            width: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+         
+        .centered {
+            text-align: center;
+        }
+    </style>
+    
+<center>
+<p id="notice"><%= notice %></p>
+
+<h1>Citas</h1>
+
+<table WIDTH="100%">
+  <thead>
+    <tr>
+      <th>Dueño de la mascota</th>
+      <th>Nombre de la mascota</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.nombre %></td>
+        <td><%= event.start %></td>
+        <td><%= event.hora %></td>
+        <td><%= link_to '<button type="button" class="button primary small">Mostrar</button>'.html_safe, event %></td>
+        <td><%= link_to '<button type="button" class="button success small">Editar</button>'.html_safe, edit_event_path(event) %></td>
+        <td><%= link_to '<button type="button" class="button alert small">Eliminar!</button>'.html_safe, event, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+    
+      
+      
+      
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div id="calendar" class="calendar"> 
+<script>
+    $('#calendar').fullCalendar({
+    })
+</script>
+</div>
+<br>
+
+<%= link_to '<button type="button" class="button success basic">Mascotas</button>'.html_safe, companeros_path %>
+<%= link_to '<button type="button" class="button expanded warning">Agendar cita</button>'.html_safe, new_event_path %>
+
+</center>

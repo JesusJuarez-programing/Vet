@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-8 columns">
+
+  </div>
+<div class="large-4 columns">
+<p>
+  <strong>Nombre:</strong>
+  <%= @companero.nombre %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @companero.edad %>
+</p>
+
+<p>
+  <strong>Raza:</strong>
+  <%= @companero.raza %>
+</p>
+
+<p>
+  <strong>Dueño:</strong>
+  <%= @companero.dueno %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @companero.descripcion %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @companero.color %>
+</p>
+
+<p>
+  <strong>Peso:</strong>
+  <%= @companero.peso %>
+</p>
+
+<p>
+  <strong>Tamaño:</strong>
+  <%= @companero.tamano %>
+</p>
+</div>
+</div>
+<center>
+<%= link_to '<button type="button" class="button success basic">Editar</button>'.html_safe, edit_companero_path(@companero) %> |
+<%= link_to '<button type="button" class="button secondary basic">Regresar</button>'.html_safe, companeros_path %>
+</center>
